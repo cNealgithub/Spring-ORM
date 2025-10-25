@@ -52,7 +52,7 @@ public class Employee {
 	}
 	@Override
 	public String toString() {
-		return "Employee [emp_id=" + emp_id + ", emp_Nae=" + emp_Nae + ", address=" + address + ", email=" + email
+		return "Employee [emp_id=" + emp_id + ", emp_Name=" + emp_Nae + ", address=" + address + ", email=" + email
 				+ "]";
 	}
 	

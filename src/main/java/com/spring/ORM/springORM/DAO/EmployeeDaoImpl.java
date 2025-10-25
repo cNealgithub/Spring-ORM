@@ -30,12 +30,18 @@ public class EmployeeDaoImpl implements EmployeeDao{
 		return all;
 	}
 	//delete method
+	@Transactional
 	public void deleteEmployee(int id) {
-		Employee emp = this.hibernateTemplate.get(Employee.class, id);
-		this.hibernateTemplate.delete(emp);
-		System.out.println("Deleted id ; " + id);
+	    Employee emp = this.hibernateTemplate.get(Employee.class, id);
+	    if (emp != null) {
+	        this.hibernateTemplate.delete(emp);
+	        System.out.println("Deleted employee with ID: " + id);
+	    } else {
+	        System.out.println("No employee found with ID: " + id);
+	    }
 	}
 	//update method
+	@Transactional
 	public void updateEmployee(Employee emp) {
 		this.hibernateTemplate.update(emp);
 	}
